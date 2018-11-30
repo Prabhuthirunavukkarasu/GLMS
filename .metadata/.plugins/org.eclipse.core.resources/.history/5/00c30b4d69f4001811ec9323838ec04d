@@ -1,0 +1,53 @@
+package com.psg.glms.service;
+
+import java.util.Iterator;
+import java.util.List;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.User;
+
+// Service only to take care of Book related transactional activities
+public class BookService {
+	
+	private final String TYPE_TITLE = "TITLE";
+	private final String TYPE_AUTHOR = "AUTHOR";
+
+	public BookService() {
+	}
+	
+	public void searchBook(final List<Book> bookRepo, User user, String keyword, String type) {
+		if(bookRepo!=null && bookRepo.size()>0) {
+			if(type.equals(TYPE_TITLE)) {
+				searchByTitle(bookRepo, keyword);
+			} else if(type.equalsIgnoreCase(TYPE_AUTHOR)) {
+				
+			} else {
+				System.out.println("Invalid Search Type");
+			}
+		} else {
+			System.out.println("It looks like the Library is empty! Man, these guys read too much!");
+		}
+	}
+	
+	// Search book by Book Title
+	Book searchByTitle(final List<Book> bookRepo, String keyword) {
+		Book tempBook = new Book();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			tempBook = (Book) iterator.next();
+			if(keyword.equalsIgnoreCase(tempBook.getTitle()))
+				return tempBook;
+		}
+		return null;
+	}
+	
+	// Search Books by Author
+	List<Book> searchByAuthor(final List<Book> bookRepo, String keyword) {
+		Book tempBook = new Book();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			tempBook = (Book) iterator.next();
+			if(keyword.equalsIgnoreCase(tempBook.getAuthor()))
+				return tempBook;
+		}
+		return null;
+	}
+}

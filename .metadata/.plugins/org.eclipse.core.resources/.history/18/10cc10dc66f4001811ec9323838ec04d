@@ -1,0 +1,8 @@
+package com.psg.glms.service;
+
+public class BookRequestService {
+
+	public BookRequestService() {
+	}
+
+}

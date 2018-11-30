@@ -1,0 +1,14 @@
+package com.psg.glms.utility;
+
+import java.util.*;
+
+import com.psg.glms.domain.*;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+    	Scanner scanner = new Scanner(System.in);
+    	
+    }
+}

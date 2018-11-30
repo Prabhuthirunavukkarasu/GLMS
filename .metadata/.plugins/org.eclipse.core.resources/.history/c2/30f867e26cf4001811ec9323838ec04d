@@ -1,0 +1,11 @@
+package com.psg.glms.utility;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+    	Object test = new Object();
+    	test = 1;
+        System.out.println(test);
+    }
+}

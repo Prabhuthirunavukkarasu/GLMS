@@ -1,0 +1,16 @@
+package com.psg.glms.utility;
+
+import java.util.Comparator;
+
+import com.psg.glms.domain.BookRequest;
+
+public class CompareById implements Comparator<BookRequest> {
+
+	public CompareById() {
+	}
+
+	public int compare(BookRequest o1, BookRequest o2) {
+		return o1.getRequestId() - o2.getRequestId();
+	}
+
+}

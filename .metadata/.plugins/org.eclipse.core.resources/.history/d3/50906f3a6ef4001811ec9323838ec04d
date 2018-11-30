@@ -1,0 +1,33 @@
+package com.psg.glms.service;
+
+import java.util.List;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.BookRequest;
+import com.psg.glms.domain.User;
+
+// Service to process Book Assign/Return flow
+public class BookRequestService {
+
+	public BookRequestService() {
+	}
+	
+	public void bookRequest(Book book, User requester, List<BookRequest> bookRequests, List<Book> bookList) {
+		
+		// Remove Book Object from Book Request Queue
+		for (int i = 0; i < bookRequests.size(); i++) {
+			BookRequest bookRequest = bookRequests.get(i);
+			if(bookRequest.getUserId() == requester.getUserId() && bookRequest.getBookId() == book.getBookId())
+				bookRequests.remove(i);
+		}
+		
+		for (int i = 0; i < bookList.size(); i++) {
+			Book bookObj = bookList.get(i);
+			if(bookObj.getBookId() == book.getBookId()) {
+				bookObj.setAvailable(false);
+				bookObj.setUserId(requester.getUserId());
+			}
+		}
+		
+	}
+}

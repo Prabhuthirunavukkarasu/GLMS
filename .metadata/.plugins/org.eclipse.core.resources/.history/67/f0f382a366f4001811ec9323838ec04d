@@ -1,0 +1,13 @@
+package com.psg.glms.domain;
+
+// User Object for system users like Students/Faculty
+public class User {
+
+	public User() {
+	}
+	
+	private int userId;
+	private String name;
+	private int rewardPoint;
+
+}

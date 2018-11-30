@@ -1,0 +1,15 @@
+package com.psg.glms.service;
+
+import java.util.List;
+
+import com.psg.glms.domain.User;
+
+public class SearchService {
+
+	public SearchService() {
+	}
+	
+	public void searchBook(final List<Book> bookRepo, User user, String keyword) {
+		
+	}
+}

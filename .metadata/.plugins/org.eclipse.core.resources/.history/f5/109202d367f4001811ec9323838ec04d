@@ -1,0 +1,9 @@
+package com.psg.glms.utility;
+
+public class CompareByAuthor {
+
+	public CompareByAuthor() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

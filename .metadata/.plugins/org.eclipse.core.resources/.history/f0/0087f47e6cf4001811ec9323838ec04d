@@ -1,0 +1,11 @@
+package com.psg.glms.domain;
+
+public class Review {
+
+	public Review() {
+	}
+	
+	private int userId;
+	private String review;
+
+}

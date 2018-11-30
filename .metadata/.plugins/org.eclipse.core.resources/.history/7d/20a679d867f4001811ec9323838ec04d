@@ -1,0 +1,12 @@
+package com.psg.glms.utility;
+
+import java.util.Comparator;
+
+import com.psg.glms.domain.Book;
+
+public class CompareByAuthor implements Comparator<Book> {
+
+	public CompareByAuthor() {
+	}
+
+}

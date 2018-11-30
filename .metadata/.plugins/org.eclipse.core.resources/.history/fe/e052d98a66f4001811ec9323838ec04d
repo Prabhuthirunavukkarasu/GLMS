@@ -1,0 +1,10 @@
+package com.psg.glms.domain;
+
+public class BookRequest {
+
+	public BookRequest() {
+	}
+	private int requestId;
+	private int userId;
+	private int bookId;
+}

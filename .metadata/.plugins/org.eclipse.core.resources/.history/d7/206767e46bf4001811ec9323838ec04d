@@ -1,0 +1,91 @@
+package com.psg.glms.service;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.User;
+
+// Service only to take care of Book related Transactional activities
+public class BookService {
+	
+	private final String TYPE_TITLE = "TITLE";
+	private final String TYPE_AUTHOR = "AUTHOR";
+	private final String TYPE_DEPT = "AUTHOR";
+
+	public BookService() {
+	}
+	
+	public List<Book> searchBook(final List<Book> bookRepo, User user, Object keyword, String type) {
+		List<Book> resultObj = null; //For the sake of simplicity, made object as null so we can reduce LoC
+		if(bookRepo!=null && bookRepo.size()>0) {
+			resultObj = searchBooks(bookRepo, keyword, type);
+		}
+		return resultObj;
+	}
+	
+	// Base search Method
+	List<Book> searchBooks(final List<Book> bookRepo, Object keyword, String type) {
+		keyword = (type.equalsIgnoreCase(TYPE_DEPT)) ? Integer.parseInt((String)keyword) : keyword;
+		List<Book> tempBookList = new ArrayList<Book>();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			Book tempBook = (Book) iterator.next();
+			if(keyword.toString().equalsIgnoreCase(tempBook.getTitle()))
+				tempBookList.add(tempBook);
+		}
+		return tempBookList;
+	}
+	
+	// Search book by Book Title
+	List<Book> searchByType(String type, Object keyword, Book bookObj, List<Book> tempBookList) {
+		if(type.equalsIgnoreCase(TYPE_TITLE)) {
+			if(keyword.toString().equalsIgnoreCase(bookObj.getTitle()))
+				tempBookList.add(bookObj);
+		}
+		if(type.equalsIgnoreCase(TYPE_AUTHOR)) {
+			if(keyword.toString().equalsIgnoreCase(bookObj.getAuthor()()))
+				tempBookList.add(bookObj);
+		}
+		if(type.equalsIgnoreCase(TYPE_DEPT)) {
+			if(keyword == bookObj.getDepartmentId())
+				tempBookList.add(bookObj);
+		}
+		return tempBookList;
+	}
+	
+	// Search Book by Author
+	List<Book> searchByAuthor(final List<Book> bookRepo, Object keyword) {
+		List<Book> tempBookList = new ArrayList<Book>();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			Book tempBook = (Book) iterator.next();
+			if(keyword.toString().equalsIgnoreCase(tempBook.getAuthor()))
+				tempBookList.add(tempBook);
+		}
+		return tempBookList;
+	}
+	
+	// Search Book by Department
+	List<Book> searchByDepartment(final List<Book> bookRepo, Object departmentId) {
+		int keyword = Integer.valueOf((String)departmentId);
+		List<Book> tempBookList = new ArrayList<Book>();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			Book tempBook = (Book) iterator.next();
+			if(keyword == tempBook.getDepartmentId())
+				tempBookList.add(tempBook);
+		}
+		return tempBookList;
+	}
+	
+	// Search Book by Department
+	List<Book> searchByCategory(final List<Book> bookRepo, Object categoryId) {
+		int keyword = Integer.valueOf((String)categoryId);
+		List<Book> tempBookList = new ArrayList<Book>();
+		for (Iterator<Book> iterator = bookRepo.iterator(); iterator.hasNext();) {
+			Book tempBook = (Book) iterator.next();
+			if(keyword == tempBook.getDepartmentId())
+				tempBookList.add(tempBook);
+		}
+		return tempBookList;
+	}
+}

@@ -1,0 +1,9 @@
+package com.psg.glms.domain;
+
+public class Review {
+
+	public Review() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

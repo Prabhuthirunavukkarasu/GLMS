@@ -1,0 +1,28 @@
+package com.psg.glms.utility;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+// Instead of having settings in Database, for the sake of simplicity we will have these configurations set in JAVA Object.
+public class GlobalSettings {
+	public static final int RATING_PER_BOOK = 1; //Rating to add for each new book a user request
+	
+	public static final int BRONZE_POINT = 25;
+	
+	public static final int SILVER_POINT = 50;
+	
+	public static final int GOLD_POINT = 75;
+	
+	public static final int PLATINUM_POINT = 100;
+	
+	Map<String, Integer> badgePoints = new HashMap<String, Integer>();
+	
+	GlobalSettings() {
+		badgePoints.put("BRONZE", BRONZE_POINT);
+		badgePoints.put("BRONZE", BRONZE_POINT);
+		badgePoints.put("BRONZE", BRONZE_POINT);
+		badgePoints.put("BRONZE", BRONZE_POINT);
+	}
+}

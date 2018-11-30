@@ -1,0 +1,14 @@
+package com.psg.glms.utility;
+
+// Instead of having settings in Database, for the sake of simplicity we will have these configurations set in JAVA Object.
+public class GlobalSettings {
+	public static final int RATING_PER_BOOK = 1; //Rating to add for each new book a user request
+	
+	public static final int BRONZE_POINT = 25;
+	
+	public static final int SILVER_POINT = 50;
+	
+	public static final int GOLD_POINT = 75;
+	
+	public static final int GOLD_POINT = 75;
+}

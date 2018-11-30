@@ -1,0 +1,59 @@
+package com.psg.glms.utility;
+
+import java.util.*;
+import com.psg.glms.domain.*;
+import com.psg.glms.service.BookRequestService;
+import com.psg.glms.service.BookService;
+
+public class App {
+	
+	static List<User> users = new ArrayList<User>();
+	static List<Book> books = new ArrayList<Book>();
+	static List<BookRequest> bookRequests = new ArrayList<BookRequest>();
+	static int bookRequestId = 0; // Primary Key
+	
+    public static void main(String[] args) {
+    	prepareMaster();
+    	BookRequestService bookRequestService = new BookRequestService();
+    	List<Book> bookSearch = new ArrayList<Book>();
+    	BookService bookService = new BookService();
+    	
+    	bookSearch = bookService.searchBook(books, users.get(0), "OOPS", GlobalSettings.TYPE_TITLE);
+    	if(bookSearch.size()>0) {
+    		int userId = users.get(0).getUserId(), bookId = 0;
+    		for (Iterator<Book> iterator = bookSearch.iterator(); iterator.hasNext();) {
+				Book book = (Book) iterator.next();
+				System.out.println(book.isAvailable()+" && "+book.getUserId());
+				if(book.isAvailable()) {
+					BookRequest bookRequest = new BookRequest(bookRequestId+1, userId, book.getBookId());
+					bookRequestService.addNewRequest(bookRequests, bookRequest);
+					bookRequestService.processRequest(book.getBookId(), userId, bookRequests, books, users);
+				}
+			}
+    	}
+    }
+    
+    static void prepareMaster() {
+    	// Book Master
+    	Book book1 = new Book(1, "OOPS", "James Martin", 1);
+    	Book book2 = new Book(2, "Data Structures", "Kevin", 1);
+    	books.add(book2);
+    	books.add(book1);
+    	
+    	// User Master
+    	User user1 = new User(1, "Ramesh");
+    	User user2 = new User(1, "Suresh");
+    	users.add(user1);
+    	users.add(user2);
+    	
+    	GlobalSettings globalSettings = new GlobalSettings();
+    }
+    
+    String getBadgeName(int rewardPoint) {
+    	Map<Integer, String> rewardMap = GlobalSettings.BADGE_NAME;
+    	for(int i=0; i<rewardMap.size(); i++) {
+    		
+    	}
+    	return null;
+    }
+}

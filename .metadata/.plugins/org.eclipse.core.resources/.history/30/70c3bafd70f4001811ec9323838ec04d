@@ -1,0 +1,29 @@
+package com.psg.glms.utility;
+
+import java.util.*;
+
+import com.psg.glms.domain.*;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+    	List<Book> books = new ArrayList<Book>();
+    	Book book1 = new Book(1, "OOPS", "James Martin", 1);
+    	Book book2 = new Book(2, "Data Structures", "Kevin", 1);
+    	books.add(book2);
+    	books.add(book1);
+    	
+    	for (int i = 0; i < books.size(); i++) {
+    		Book book = books.get(i);
+			if(book.getBookId() == 1)
+				books.remove(i);
+		}
+    	
+    	System.out.println(books.size());
+    }
+    
+    void prepareMaster() {
+    	
+    }
+}

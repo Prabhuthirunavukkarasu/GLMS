@@ -1,0 +1,15 @@
+package com.psg.glms.utility;
+
+import java.util.*;
+
+import com.psg.glms.domain.*;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+    	List<Book> books = new ArrayList<Book>();
+    	Book book1 = new Book(1, "OOPS", "James Martin", 1);
+    	Book book1 = new Book(1, "OOPS", "James Martin", 1);
+    }
+}

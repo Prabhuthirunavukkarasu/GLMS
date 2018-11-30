@@ -1,0 +1,24 @@
+package com.psg.glms.service;
+
+import java.util.List;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.User;
+
+// Service only to take care of Book related transactional activities
+public class BookService {
+	
+	private final String TYPE_TITLE = "TITLE";
+	private final String TYPE_AUTHOR = "TITLE";
+
+	public BookService() {
+	}
+	
+	public void searchBook(final List<Book> bookRepo, User user, String keyword, String type) {
+		if(bookRepo!=null && bookRepo.size()>0) {
+			
+		} else {
+			System.out.println("It looks like the Library is empty! Man, these guys read too much!");
+		}
+	}
+}

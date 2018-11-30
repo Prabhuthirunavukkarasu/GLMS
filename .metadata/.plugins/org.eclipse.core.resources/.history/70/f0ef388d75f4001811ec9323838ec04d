@@ -1,0 +1,38 @@
+package com.psg.glms.utility;
+
+import java.util.*;
+import com.psg.glms.domain.*;
+
+public class App {
+	
+	List<User> users = new ArrayList<User>();
+	List<Book> books = new ArrayList<Book>();
+	List<BookRequest> bookRequests = new ArrayList<BookRequest>();
+	
+    public static void main(String[] args) {
+    }
+    
+    void prepareMaster() {
+    	// Book Master
+    	Book book1 = new Book(1, "OOPS", "James Martin", 1);
+    	Book book2 = new Book(2, "Data Structures", "Kevin", 1);
+    	books.add(book2);
+    	books.add(book1);
+    	
+    	// User Master
+    	User user1 = new User(1, "Ramesh");
+    	User user2 = new User(1, "Suresh");
+    	users.add(user1);
+    	users.add(user2);
+    	
+    	GlobalSettings globalSettings = new GlobalSettings();
+    }
+    
+    String getBadgeName(int rewardPoint) {
+    	Map<Integer, String> rewardMap = GlobalSettings.BADGE_NAME;
+    	for(int i=0; i<rewardMap.size(); i++) {
+    		
+    	}
+    	return null;
+    }
+}

@@ -1,0 +1,9 @@
+package com.psg.glms.domain;
+
+public class Category {
+
+	public Category() {
+	}
+	private int categoryId;
+	private String name;
+}

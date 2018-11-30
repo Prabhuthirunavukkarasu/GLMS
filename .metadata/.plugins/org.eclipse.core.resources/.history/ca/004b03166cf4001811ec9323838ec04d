@@ -1,0 +1,11 @@
+package com.psg.glms.service;
+
+public class BookRequestService {
+
+	public BookRequestService() {
+	}
+	
+	public void bookRequest(Book book, User requester) {
+		
+	}
+}

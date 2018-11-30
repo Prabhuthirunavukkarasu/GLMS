@@ -1,0 +1,12 @@
+package com.psg.glms.domain;
+
+public class Book {
+	
+	public Book(){
+		
+	}
+	
+	private int bookId;
+	private String title;
+	private String author;
+}

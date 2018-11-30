@@ -1,0 +1,54 @@
+package com.psg.glms.utility;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+// Instead of having settings in Database, for the sake of simplicity we will have these configurations set in JAVA Object.
+public class GlobalSettings {
+	public static final int RATING_PER_BOOK = 1; //Rating to add for each new book a user request
+	
+	public static final int BRONZE_POINT = 25;
+	
+	public static final int SILVER_POINT = 50;
+	
+	public static final int GOLD_POINT = 75;
+	
+	public static final int PLATINUM_POINT = 100;
+	
+	public static final Map<Integer, String> BADGE_NAME = new HashMap<Integer, String>();
+	
+	public static final List<Integer> BADGE_RANGE = new ArrayList<Integer>(); 
+	
+	GlobalSettings() {
+		BADGE_RANGE.add(BRONZE_POINT);
+		BADGE_RANGE.add(SILVER_POINT);
+		BADGE_RANGE.add(GOLD_POINT);
+		BADGE_RANGE.add(PLATINUM_POINT);
+		
+		BADGE_NAME.put(BRONZE_POINT, "BRONZE");
+		BADGE_NAME.put(SILVER_POINT, "SILVER");
+		BADGE_NAME.put(GOLD_POINT, "GOLD");
+		BADGE_NAME.put(PLATINUM_POINT, "PLATINUM");
+	}
+	
+	static String getBadgeName(int rewardPoint) {
+		int start = 0, end = 0;
+		for (int i = 0; i < BADGE_RANGE.size(); i++) {
+			if(i>0) {
+				start = BADGE_RANGE.get(i-1);
+				end = BADGE_RANGE.get(i);
+				
+				if(rewardPoint > start && rewardPoint < end)
+					return BADGE_NAME.get(start);
+			}
+		}
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		GlobalSettings globalSettings = new GlobalSettings();
+		System.out.println(getBadgeName(100));
+	}
+}

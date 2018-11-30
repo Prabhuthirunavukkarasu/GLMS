@@ -1,0 +1,5 @@
+package com.psg.glms.utility;
+
+public class GlobalSettings {
+	public static final int BASIC_RATING = 1; //Rating to add for each new book a user request
+}

@@ -1,0 +1,10 @@
+package com.psg.glms.domain;
+
+// Category for Books. Independent of Department
+public class Category {
+
+	public Category() {
+	}
+	private int categoryId;
+	private String name;
+}

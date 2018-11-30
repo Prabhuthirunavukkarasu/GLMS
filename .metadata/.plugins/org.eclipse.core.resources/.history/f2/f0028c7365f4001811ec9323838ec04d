@@ -1,0 +1,10 @@
+package com.psg.glms.domain;
+
+public class User {
+
+	public User() {
+	}
+	
+	private int userId;
+
+}

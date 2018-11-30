@@ -1,0 +1,16 @@
+package com.psg.glms.utility;
+
+import java.util.Comparator;
+
+import com.psg.glms.domain.Book;
+
+public class CompareByTitle implements Comparator<Book> {
+
+	public CompareByTitle() {
+	}
+
+	public int compare(Book o1, Book o2) {
+		return 0;
+	}
+
+}

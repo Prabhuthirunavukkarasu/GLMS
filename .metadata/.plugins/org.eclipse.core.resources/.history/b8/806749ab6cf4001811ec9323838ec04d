@@ -1,0 +1,17 @@
+package com.psg.glms.service;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.BookRequest;
+import com.psg.glms.domain.User;
+
+// Service to process Book Assign/Return flow
+public class BookRequestService {
+
+	public BookRequestService() {
+	}
+	
+	public void bookRequest(Book book, User requester, List<BookRequest> bookRequests) {
+		book.setAvailable(false);
+		book.setUserId(requester.getUserId());
+	}
+}

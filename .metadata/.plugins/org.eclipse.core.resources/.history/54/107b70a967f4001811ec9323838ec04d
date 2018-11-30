@@ -1,0 +1,11 @@
+package com.psg.glms.utility;
+
+import java.util.Comparator;
+
+public class CompareByTitle implements Comparator<Book> {
+
+	public CompareByTitle() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

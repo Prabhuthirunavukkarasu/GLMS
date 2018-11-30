@@ -1,0 +1,11 @@
+package com.psg.glms.domain;
+
+//Basic Department object
+public class Department {
+
+	public Department() {
+	}
+	
+	private int departmentId;
+	private String name;
+}

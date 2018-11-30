@@ -1,0 +1,14 @@
+package com.psg.glms.service;
+
+import com.psg.glms.domain.Book;
+import com.psg.glms.domain.User;
+
+public class BookRequestService {
+
+	public BookRequestService() {
+	}
+	
+	public void bookRequest(Book book, User requester) {
+		
+	}
+}

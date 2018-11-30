@@ -1,0 +1,9 @@
+package com.psg.glms.service;
+
+public class SearchService {
+
+	public SearchService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

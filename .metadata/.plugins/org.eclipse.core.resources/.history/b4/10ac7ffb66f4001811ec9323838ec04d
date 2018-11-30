@@ -1,0 +1,11 @@
+package com.psg.glms.service;
+
+public class SearchService {
+
+	public SearchService() {
+	}
+	
+	public void searchBook() {
+		
+	}
+}
